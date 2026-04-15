@@ -13,6 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 const defaultSiteUrl = "https://twitter-image.vercel.app";
+const socialImageUrl =
+  "https://cdn.betstrike.com/public/uploads/large_ru_rich_now_deal_with_it_ebd0518b08.png";
+const socialTitle = "Market Pulse: Momentum Is Back";
+const socialDescription =
+  "Fresh setups are forming across majors, and volatility is waking up - perfect timing to track the next breakout.";
 
 function getSiteUrl(): string {
   const rawUrl =
@@ -30,37 +35,36 @@ function getSiteUrl(): string {
 }
 
 const siteUrl = getSiteUrl();
-const stage = "3";
-const stageTitle = `Build #${stage}`;
-const stageDescription = `Push #${stage}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: stageTitle,
-  description: stageDescription,
+  title: socialTitle,
+  description: socialDescription,
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "twitter-image",
     url: siteUrl,
-    title: stageTitle,
-    description: stageDescription,
+    title: socialTitle,
+    description: socialDescription,
     images: [
       {
-        url: "/1.png",
-        width: 1024,
-        height: 1024,
-        alt: "Preview image",
+        url: socialImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Market pulse preview card",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    creator: "MozDevNet",
-    title: stageTitle,
-    description: stageDescription,
-    images: [`/1.png?v=${stage}`],
+    title: socialTitle,
+    description: socialDescription,
+    images: [socialImageUrl],
+  },
+  other: {
+    "twitter:image:src": socialImageUrl,
   },
   alternates: {
     canonical: siteUrl,

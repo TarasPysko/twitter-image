@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "push:auto": "./scripts/push-with-title.sh"
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "16.2.3",
