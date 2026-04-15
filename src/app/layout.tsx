@@ -27,10 +27,10 @@ export const metadata: Metadata = {
       "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
     images: [
       {
-        url: "https://developer.mozilla.org/mdn-social-image.46ac2375.png",
+        url: "/1.png",
         width: 1024,
         height: 1024,
-        alt: "The MDN logo",
+        alt: "Preview image",
         type: "image/png",
       },
     ],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "HTML: HyperText Markup Language | MDN",
     description:
       "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
-    images: ["https://developer.mozilla.org/mdn-social-image.46ac2375.png"],
+    images: ["/1.png"],
   },
   alternates: {
     canonical: "https://developer.mozilla.org/en-US/docs/Web/HTML",
