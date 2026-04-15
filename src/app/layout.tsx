@@ -21,6 +21,11 @@ const socialDescription =
 export const metadata: Metadata = {
   title: socialTitle,
   description: socialDescription,
+  openGraph: {
+    title: socialTitle,
+    description: socialDescription,
+    images: [socialImageUrl],
+  },
   twitter: {
     card: "summary_large_image",
     title: socialTitle,
