@@ -12,10 +12,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ??
-  "https://twitter-image.vercel.app";
+const defaultSiteUrl = "https://twitter-image.vercel.app";
+
+function getSiteUrl(): string {
+  const rawUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+    defaultSiteUrl;
+
+  const candidate = rawUrl.includes("://") ? rawUrl : `https://${rawUrl}`;
+
+  try {
+    return new URL(candidate).toString();
+  } catch {
+    return defaultSiteUrl;
+  }
+}
+
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
