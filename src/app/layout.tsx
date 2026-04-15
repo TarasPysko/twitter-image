@@ -12,8 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+  "https://twitter-image.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   title: "1",
   description:
     "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
@@ -21,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "MDN Web Docs",
-    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    url: siteUrl,
     title: "1",
     description:
       "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
     images: ["/1.png"],
   },
   alternates: {
-    canonical: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    canonical: siteUrl,
   },
 };
 
