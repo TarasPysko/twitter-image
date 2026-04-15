@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-next_title="$(node scripts/bump-metadata-title.mjs)"
+next_stage="$(node scripts/bump-metadata-title.mjs)"
 
 git add src/app/layout.tsx
 
@@ -10,5 +10,5 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-git commit -m "Bump Twitter title to ${next_title}"
+git commit -m "Bump metadata stage to ${next_stage}"
 git push "$@"

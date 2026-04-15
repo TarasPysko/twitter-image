@@ -30,20 +30,21 @@ function getSiteUrl(): string {
 }
 
 const siteUrl = getSiteUrl();
+const stage = "3";
+const stageTitle = `Build #${stage}`;
+const stageDescription = `Push #${stage}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "1",
-  description:
-    "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
+  title: stageTitle,
+  description: stageDescription,
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "MDN Web Docs",
+    siteName: "twitter-image",
     url: siteUrl,
-    title: "1",
-    description:
-      "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
+    title: stageTitle,
+    description: stageDescription,
     images: [
       {
         url: "/1.png",
@@ -55,12 +56,11 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     creator: "MozDevNet",
-    title: "3",
-    description:
-      "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
-    images: ["/1.png?v=3"],
+    title: stageTitle,
+    description: stageDescription,
+    images: [`/1.png?v=${stage}`],
   },
   alternates: {
     canonical: siteUrl,
