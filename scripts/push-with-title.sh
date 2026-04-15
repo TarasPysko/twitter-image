@@ -10,5 +10,5 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-git commit -m "Bump metadata title to ${next_title}"
+git commit -m "Bump Twitter title to ${next_title}"
 git push "$@"

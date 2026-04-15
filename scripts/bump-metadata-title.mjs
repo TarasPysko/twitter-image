@@ -4,24 +4,24 @@ import { resolve } from "node:path";
 const layoutPath = resolve(process.cwd(), "src/app/layout.tsx");
 const source = readFileSync(layoutPath, "utf8");
 
-const topLevelTitleRegex = /title:\s*"([^"]+)"/;
-const topLevelMatch = source.match(topLevelTitleRegex);
+const twitterTitleRegex = /twitter:\s*\{[\s\S]*?title:\s*"([^"]+)"/;
+const twitterTitleMatch = source.match(twitterTitleRegex);
 
-if (!topLevelMatch) {
-  throw new Error("Could not find metadata title in src/app/layout.tsx");
+if (!twitterTitleMatch) {
+  throw new Error("Could not find twitter title in src/app/layout.tsx");
 }
 
-const currentValue = Number.parseInt(topLevelMatch[1], 10);
+const currentValue = Number.parseInt(twitterTitleMatch[1], 10);
 const nextValue = Number.isNaN(currentValue) ? 1 : currentValue + 1;
 const nextTitle = String(nextValue);
 
-const nextSource = source
-  .replace(/title:\s*"[^"]+"/g, `title: "${nextTitle}"`)
-  .replace(/og:title"\s*content="[^"]+"/g, `og:title" content="${nextTitle}"`)
-  .replace(/twitter:title"\s*content="[^"]+"/g, `twitter:title" content="${nextTitle}"`);
+const nextSource = source.replace(
+  /(twitter:\s*\{[\s\S]*?title:\s*")([^"]+)(")/,
+  `$1${nextTitle}$3`,
+);
 
 if (nextSource === source) {
-  throw new Error("No title values were updated");
+  throw new Error("No twitter title value was updated");
 }
 
 writeFileSync(layoutPath, nextSource, "utf8");
