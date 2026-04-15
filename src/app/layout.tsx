@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "HTML: HyperText Markup Language | MDN",
+  title: "1",
   description:
     "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
   openGraph: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "MDN Web Docs",
     url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    title: "HTML: HyperText Markup Language | MDN",
+    title: "1",
     description:
       "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     creator: "MozDevNet",
-    title: "HTML: HyperText Markup Language | MDN",
+    title: "1",
     description:
       "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
     images: ["/1.png"],
